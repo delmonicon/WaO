@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Enter the march time in minutes: <input type="number" id="myMinutes" value="">and seconds: <input type="number" id="mySeconds" value=""></p> 
+
+<button onclick="myFunction()">Calculate speeds</button>
+
+<p id="halfspeed"></p>
+<p id="quarterspeed"></p>
+
+<script>
+function myFunction() {
+	var m = document.getElementById("myMinutes").value;
+    var s = document.getElementById("mySeconds").value;
+    document.getElementById("halfspeed").innerHTML = "Use _"+ Math.ceil(Math.log(10/((60*m)+s*1))/Math.log(.5))+"_ 50% speeds to get there in less than 10 seconds";
+    document.getElementById("quarterspeed").innerHTML = "Use _"+ Math.ceil(Math.log(10/((60*m)+s*1))/Math.log(.75))+"_ 25% speeds to get there in less than 10 seconds";
+}
+</script>
+
+</body>
+</html>
